@@ -1,44 +1,43 @@
-class Caesarize {
-    constructor() {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Caesarize = /** @class */ (function () {
+    function Caesarize() {
         this.alphabet = 'abcdefghijklmnopqrstuvwxyz';
         this.capitalAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         this.result = '';
     }
-
-    isCapital(letter) {
+    Caesarize.prototype.isCapital = function (letter) {
         return letter === letter.toUpperCase();
-    }
-
-    caseCheck(isCapital) {
+    };
+    Caesarize.prototype.caseCheck = function (isCapital) {
         return isCapital ? this.capitalAlphabet : this.alphabet;
-    }
-
-    shiftChar(char, shift, isEncrypt) {
-        const isCharCapital = this.isCapital(char);
-        const letterCase = this.caseCheck(isCharCapital);
-        const index = letterCase.indexOf(char);
+    };
+    Caesarize.prototype.shiftChar = function (char, shift, isEncrypt) {
+        var isCharCapital = this.isCapital(char);
+        var letterCase = this.caseCheck(isCharCapital);
+        var index = letterCase.indexOf(char);
         if (index === -1) {
             return char;
         }
-        const newIndex = isEncrypt
+        var newIndex = isEncrypt
             ? (index + shift) % letterCase.length
             : (index - shift + letterCase.length) % letterCase.length;
         return letterCase[newIndex];
-    }
-
-    encrypt(text, shift) {
-        for (let i = 0; i < text.length; i++) {
+    };
+    Caesarize.prototype.encrypt = function (text, shift) {
+        this.result = '';
+        for (var i = 0; i < text.length; i++) {
             this.result += this.shiftChar(text[i], shift, true);
         }
         return this.result;
-    }
-
-    decrypt(text, shift) {
-        for (let i = 0; i < text.length; i++) {
+    };
+    Caesarize.prototype.decrypt = function (text, shift) {
+        this.result = '';
+        for (var i = 0; i < text.length; i++) {
             this.result += this.shiftChar(text[i], shift, false);
         }
         return this.result;
-    }
-}
-
-module.exports = Caesarize;
+    };
+    return Caesarize;
+}());
+exports.default = Caesarize;
