@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Caesarize = void 0;
 var Caesarize = /** @class */ (function () {
     function Caesarize() {
         this.alphabet = 'abcdefghijklmnopqrstuvwxyz';
@@ -16,13 +17,9 @@ var Caesarize = /** @class */ (function () {
         var isCharCapital = this.isCapital(char);
         var letterCase = this.caseCheck(isCharCapital);
         var index = letterCase.indexOf(char);
-        if (index === -1) {
-            return char;
-        }
-        var newIndex = isEncrypt
-            ? (index + shift) % letterCase.length
-            : (index - shift + letterCase.length) % letterCase.length;
-        return letterCase[newIndex];
+        return index === -1
+            ? char
+            : letterCase[(index + (isEncrypt ? shift : -shift) + letterCase.length) % letterCase.length];
     };
     Caesarize.prototype.encrypt = function (text, shift) {
         this.result = '';
@@ -40,4 +37,4 @@ var Caesarize = /** @class */ (function () {
     };
     return Caesarize;
 }());
-exports.default = Caesarize;
+exports.Caesarize = Caesarize;
