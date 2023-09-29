@@ -13,3 +13,17 @@ Caesar Cipher is a substitution cipher that alters text by shifting the alphabet
 ``` 
 npm install caesarize
 ```
+
+## Usage:
+```
+const caesarize = require("caesarize");
+```
+
+## Example Output
+```javascript
+Caesarize.encrypt("Hello, World!", 5); // "Mjqqt, Btwqi!"
+Caesarize.encrypt("Hello, World!", -10); // "Xubbe, Mehbt!"
+
+Caesarize.decrypt("Mjqqt, Btwqi!", 5); // "Hello, World!"
+Caesarize.decrypt("Xubbe, Mehbt!", -10); // "Hello, World!"
+```
