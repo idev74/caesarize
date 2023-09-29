@@ -1,7 +1,7 @@
 {
   "name": "caesarize",
   "version": "1.0.0",
-  "description": "a caesar cipher decoder and encoder in javascript!",
+  "description": "a caesar cipher decoder and encoder in typescript!",
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
@@ -9,6 +9,19 @@
     "lint": "eslint src/**/*.ts",
     "bundle": "webpack"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idev74/caesarize.git"
+  },
+  "keywords": [
+    "typescript",
+    "caesar cipher",
+    "cipher",
+    "decoder",
+    "encoder",
+    "encryption",
+    "decryption"
+  ],
   "author": "Isabella Devassy",
   "license": "ISC",
   "devDependencies": {
