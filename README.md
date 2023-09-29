@@ -4,7 +4,7 @@
 
 [Package available on NPM](https://www.npmjs.com/package/caesarize)
 
-A simple node module that uses Caesar Cipher to encrypt and decrypt text!
+A simple node module built in Typescript that uses Caesar Cipher to encrypt and decrypt text!
 
 ## What is Caesar Cipher?
 Caesar Cipher is a substitution cipher that alters text by shifting the alphabet by a certain number determined by the user. 
